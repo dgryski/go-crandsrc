@@ -1,5 +1,5 @@
-// Package csrandsrc provides a source for math/rand via crypto/rand
-package csrandsrc
+// Package crandsrc provides a source for math/rand via crypto/rand
+package crandsrc
 
 import (
 	crand "crypto/rand"
