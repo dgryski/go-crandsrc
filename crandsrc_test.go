@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func ExampleRand() {
+func ExampleSource() {
 
 	var r *rand.Rand
 
