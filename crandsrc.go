@@ -7,9 +7,9 @@ import (
 	mrand "math/rand"
 )
 
-type Rand struct{}
+type Source struct{}
 
-func (r Rand) Int63() int64 {
+func (s Source) Int63() int64 {
 	var b [8]byte
 	_, err := crand.Read(b[:])
 	if err != nil {
@@ -19,8 +19,8 @@ func (r Rand) Int63() int64 {
 	return int64(binary.LittleEndian.Uint64(b[:]))
 }
 
-func (r Rand) Seed(s int64) {
+func (r Source) Seed(s int64) {
 	// ignored
 }
 
-var _ = mrand.Source(Rand{})
+var _ = mrand.Source(Source{})
