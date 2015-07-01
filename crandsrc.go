@@ -16,7 +16,7 @@ func (s Source) Int63() int64 {
 		// :(
 		panic("no crypto source")
 	}
-	return int64(binary.LittleEndian.Uint64(b[:]))
+	return int64(binary.LittleEndian.Uint64(b[:])) & 0x7fffffffffffffff
 }
 
 func (r Source) Seed(s int64) {
